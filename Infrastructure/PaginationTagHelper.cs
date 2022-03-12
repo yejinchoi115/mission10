@@ -1,12 +1,12 @@
 ﻿using System;
-using m10.Models.ViewModels;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Mvc.Rendering;
 using Microsoft.AspNetCore.Mvc.Routing;
 using Microsoft.AspNetCore.Mvc.ViewFeatures;
 using Microsoft.AspNetCore.Razor.TagHelpers;
+using mission10.Models.ViewModels;
 
-namespace m10.Infrastructure
+namespace mission10.Infrastructure
 {
     [HtmlTargetElement("div", Attributes = "page-blah")]
     public class PaginationTagHelper : TagHelper

@@ -2,7 +2,7 @@
 using System.ComponentModel.DataAnnotations;
 using Microsoft.AspNetCore.Mvc.ModelBinding;
 
-namespace m10.Models
+namespace mission10.Models
 {
     public class Shopper
     {

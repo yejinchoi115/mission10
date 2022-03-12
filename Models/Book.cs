@@ -5,7 +5,7 @@ using System.Collections.Generic;
 // If you have enabled NRTs for your project, then un-comment the following line:
 // #nullable disable
 
-namespace m10.Models
+namespace mission10.Models
 {
     public partial class Book
     {

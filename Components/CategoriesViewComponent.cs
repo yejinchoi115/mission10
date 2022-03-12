@@ -1,9 +1,9 @@
 ﻿using System;
 using System.Linq;
-using m10.Models;
 using Microsoft.AspNetCore.Mvc;
+using mission10.Models;
 
-namespace m10.Components
+namespace mission10.Components
 {
     public class TypesViewComponent : ViewComponent
     {

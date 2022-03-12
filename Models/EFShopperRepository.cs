@@ -2,7 +2,7 @@
 using System.Linq;
 using Microsoft.EntityFrameworkCore;
 
-namespace m10.Models
+namespace mission10.Models
 {
     public class EFShopperRepository : IShopperRepository
     {

@@ -1,5 +1,5 @@
 ﻿using System;
-namespace m10.Models.ViewModels
+namespace mission10.Models.ViewModels
 {
     public class PageInfo
     {

@@ -1,8 +1,8 @@
 ﻿using System;
-using m9.Models;
 using Microsoft.AspNetCore.Mvc;
+using mission10.Models;
 
-namespace m10.Views.Shared.Components
+namespace mission10.Views.Shared.Components
 {
     public class CartSummaryViewComponent : ViewComponent
     {

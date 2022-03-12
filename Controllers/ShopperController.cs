@@ -2,12 +2,12 @@
 using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
-using m10.Models;
 using Microsoft.AspNetCore.Mvc;
+using mission10.Models;
 
 // For more information on enabling MVC for empty projects, visit https://go.microsoft.com/fwlink/?LinkID=397860
 
-namespace m10.Controllers
+namespace mission10.Controllers
 {
     public class ShopperController : Controller
     {

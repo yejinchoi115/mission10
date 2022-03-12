@@ -2,7 +2,7 @@
 using System.Text.Json;
 using Microsoft.AspNetCore.Http;
 
-namespace m10.Infrastructure
+namespace mission10.Infrastructure
 {
     public static class SessionExtensions
     {

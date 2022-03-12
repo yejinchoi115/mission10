@@ -5,10 +5,10 @@ using System.Linq;
 using System.Threading.Tasks;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.Extensions.Logging;
-using m10.Models;
-using m10.Models.ViewModels;
+using mission10.Models;
+using mission10.Models.ViewModels;
 
-namespace m10.Controllers
+namespace mission10.Controllers
 {
     public class HomeController : Controller
     {

@@ -2,11 +2,11 @@
 using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
-using m9.Models;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Mvc.RazorPages;
+using mission10.Models;
 
-namespace m9.Pages
+namespace mission10.Pages
 {
     public class ShoppingModel : PageModel
     {

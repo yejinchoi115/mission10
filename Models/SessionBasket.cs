@@ -4,7 +4,7 @@ using m10.Infrastructure;
 using Microsoft.AspNetCore.Http;
 using Microsoft.Extensions.DependencyInjection;
 
-namespace m10.Models
+namespace mission10.Models
 {
     public class SessionBasket : Basket
     {

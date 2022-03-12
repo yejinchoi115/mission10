@@ -1,7 +1,7 @@
 ﻿using System;
 using System.Linq;
 
-namespace m10.Models.ViewModels
+namespace mission10.Models.ViewModels
 {
     public class ProjectsViewModel
     {
