@@ -1,0 +1,64 @@
+﻿<table class="table table-sm table-striped table-bordered">
+
+    <thead>
+        <tr>
+            <th colspan="5" class="text-center">@TableTitle</th>
+        </tr>
+    </thead>
+
+    <tbody>
+        @if (Shoppers?.Count() > 0)
+        {
+            @foreach (Shopper d in Shoppers)
+            {
+                <tr>
+                    <td>@d.FName</td>
+                    <td>@d.LName</td>
+                    <td>@d.Zip</td>
+
+                    <th>Book</th>
+                    <th>Quantity</th>
+
+                    <td>
+                        <button class="btn btn-sm btn-danger"
+                                @onclick="@(x => OrderSelected.InvokeAsync(d.ShopperId))">
+                            @ButtonLabel
+                        </button>
+                    </td>
+                </tr>
+
+                @foreach (BasketLineItem bli in d.Lines)
+                    {
+                        <tr>
+                            <td colspan="3"></td>
+                            <td>@bli.Book.Title</td>
+                            <td>@bli.Quantity</td>
+                        </tr>
+                    }
+
+            }
+        }
+        else
+        {
+            <tr>
+                <td colspan="5" class="text-center">No Orders</td>
+            </tr>
+        }
+    </tbody>
+</table>
+
+@code {
+
+    [Parameter]
+    public string TableTitle { get; set; } = "Ordered";
+
+    [Parameter]
+    public IEnumerable<Shopper> Shoppers { get; set; }
+
+    [Parameter]
+    public string ButtonLabel { get; set; } = "Ship";
+
+    [Parameter]
+    public EventCallback<int> OrderSelected { get; set; }
+
+}

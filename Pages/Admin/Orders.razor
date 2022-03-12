@@ -1,0 +1,45 @@
+﻿@page "/admin/orders"
+@inherits OwningComponentBase<IShopperRepository>
+
+<OrderTable TableTitle="Ordered" Shoppers="OrderedBooks" ButtonLabel="Ship" OrderSelected="ShipBook"></OrderTable>
+
+<OrderTable TableTitle="Shipped" Shoppers="ShippedBooks" ButtonLabel="Cancel" OrderSelected="CancelShip"></OrderTable>
+
+<button class="btn btn-info" @onclick="@(x => UpdateData())">Refresh Data</button>
+
+@code {
+
+    public IShopperRepository repo => Service;
+
+    //All orders
+    public IEnumerable<Shopper> AllOrders { get; set; }
+    // Ordered Books
+    public IEnumerable<Shopper> OrderedBooks { get; set; }
+    // Shipped Books
+    public IEnumerable<Shopper> ShippedBooks { get; set; }
+
+    protected async override Task OnInitializedAsync()
+    {
+        await UpdateData();
+    }
+    public async Task UpdateData()
+    {
+        //await untill this task is done
+        AllOrders = await repo.Shoppers.ToListAsync();
+        // Set the ordered books
+        OrderedBooks = AllOrders.Where(x => !x.OrderReceived);
+        // set the shipped books
+        ShippedBooks = AllOrders.Where(x => x.OrderReceived);
+    }
+
+    // function to ship books
+    public void ShipBook(int id) => UpdateShip(id, true);
+    public void CancelShip(int id) => UpdateShip(id, false);
+
+    private void UpdateShip(int id, bool shipped)
+    {
+        Shopper s = repo.Shoppers.FirstOrDefault(x => x.ShopperId == id);
+        s.OrderReceived = shipped;
+        repo.SaveShopper(s);
+    }
+}
